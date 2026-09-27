@@ -1,0 +1,430 @@
+/* ================================
+   Baris Kaftancioglu — Personal Site
+   ================================ */
+
+:root {
+    --background: #ffffff;
+    --text: #222222;
+    --secondary: #666666;
+    --accent: #2f5f8f;
+    --border: #e5e5e5;
+    --light-background: #f7f7f7;
+
+    --page-width: 1000px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Helvetica,
+        Arial,
+        sans-serif;
+
+    font-size: 16px;
+    line-height: 1.65;
+
+    color: var(--text);
+    background: var(--background);
+}
+
+
+/* ================================
+   LINKS
+   ================================ */
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+/* ================================
+   NAVIGATION
+   ================================ */
+
+nav {
+    border-bottom: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.96);
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-inner {
+    max-width: var(--page-width);
+    margin: auto;
+
+    padding: 18px 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.brand {
+    color: var(--text);
+
+    font-size: 17px;
+    font-weight: 600;
+
+    letter-spacing: -0.3px;
+}
+
+.brand:hover {
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: var(--secondary);
+    font-size: 14px;
+}
+
+.nav-links a:hover {
+    color: var(--text);
+    text-decoration: none;
+}
+
+
+/* ================================
+   PAGE
+   ================================ */
+
+main {
+    max-width: var(--page-width);
+    margin: auto;
+    padding: 0 25px;
+}
+
+
+/* ================================
+   INTRO / HEADER
+   ================================ */
+
+header {
+    padding: 90px 0 75px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.eyebrow {
+    margin-bottom: 15px;
+
+    color: var(--accent);
+
+    font-size: 13px;
+    font-weight: 600;
+
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+h1 {
+    margin: 0;
+
+    font-size: clamp(45px, 7vw, 75px);
+    line-height: 1;
+
+    font-weight: 650;
+
+    letter-spacing: -3px;
+}
+
+.subtitle {
+    max-width: 720px;
+
+    margin-top: 28px;
+
+    color: var(--secondary);
+
+    font-size: 20px;
+    line-height: 1.55;
+}
+
+
+/* ================================
+   BUTTONS / PROFILE LINKS
+   ================================ */
+
+.links {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-top: 30px;
+}
+
+.button {
+    padding: 8px 14px;
+
+    border: 1px solid var(--border);
+    border-radius: 5px;
+
+    color: var(--text);
+    background: white;
+
+    font-size: 14px;
+
+    transition: 0.15s ease;
+}
+
+.button:hover {
+    border-color: #aaa;
+    background: var(--light-background);
+
+    text-decoration: none;
+}
+
+
+/* ================================
+   SECTIONS
+   ================================ */
+
+section {
+    padding: 65px 0;
+
+    border-bottom: 1px solid var(--border);
+}
+
+h2 {
+    margin: 0 0 30px;
+
+    font-size: 27px;
+    font-weight: 600;
+
+    letter-spacing: -0.8px;
+}
+
+h3 {
+    margin: 0 0 5px;
+
+    font-size: 17px;
+    font-weight: 600;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 16px;
+}
+
+.intro {
+    max-width: 760px;
+
+    font-size: 17px;
+}
+
+
+/* ================================
+   RESEARCH INTERESTS
+   ================================ */
+
+.research-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 15px;
+}
+
+.card {
+    padding: 22px;
+
+    border: 1px solid var(--border);
+    border-radius: 6px;
+
+    background: var(--light-background);
+}
+
+.card h3 {
+    margin-bottom: 8px;
+}
+
+.card p {
+    margin: 0;
+
+    color: var(--secondary);
+
+    font-size: 15px;
+}
+
+
+/* ================================
+   TAGS
+   ================================ */
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-top: 25px;
+}
+
+.tag {
+    padding: 5px 9px;
+
+    border: 1px solid var(--border);
+    border-radius: 4px;
+
+    background: #fafafa;
+
+    color: var(--secondary);
+
+    font-size: 13px;
+}
+
+
+/* ================================
+   CV / PUBLICATIONS / EXPERIENCE
+   ================================ */
+
+.item {
+    display: grid;
+
+    grid-template-columns: 130px 1fr;
+
+    gap: 25px;
+
+    padding: 23px 0;
+
+    border-top: 1px solid var(--border);
+}
+
+.item:first-of-type {
+    border-top: none;
+    padding-top: 0;
+}
+
+.item-date {
+    color: var(--secondary);
+
+    font-size: 14px;
+}
+
+.item-content p {
+    margin: 4px 0 0;
+
+    color: var(--secondary);
+
+    font-size: 15px;
+}
+
+
+/* ================================
+   PUBLICATIONS
+   ================================ */
+
+.publication-title {
+    font-weight: 600;
+}
+
+.publication-authors {
+    color: var(--secondary);
+}
+
+.publication-links {
+    margin-top: 7px;
+}
+
+.publication-links a {
+    margin-right: 12px;
+
+    font-size: 14px;
+}
+
+
+/* ================================
+   CONTACT
+   ================================ */
+
+#contact {
+    padding-bottom: 80px;
+}
+
+
+/* ================================
+   FOOTER
+   ================================ */
+
+footer {
+    max-width: var(--page-width);
+
+    margin: auto;
+    padding: 30px 25px 50px;
+
+    color: var(--secondary);
+
+    font-size: 13px;
+}
+
+
+/* ================================
+   MOBILE
+   ================================ */
+
+@media (max-width: 700px) {
+
+    .nav-inner {
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 12px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+
+        gap: 12px 18px;
+    }
+
+    header {
+        padding: 60px 0;
+    }
+
+    h1 {
+        font-size: 48px;
+        letter-spacing: -2px;
+    }
+
+    .subtitle {
+        font-size: 18px;
+    }
+
+    section {
+        padding: 50px 0;
+    }
+
+    .research-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .item {
+        grid-template-columns: 1fr;
+
+        gap: 5px;
+    }
+}
