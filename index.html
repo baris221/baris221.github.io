@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Personal academic website of Baris Kaftancioglu, PhD researcher at LIP6, Sorbonne University.">
+  <title>Baris Kaftancioglu | PhD Researcher</title>
+
+  <style>
+    :root {
+      --text: #171717;
+      --muted: #666;
+      --line: #e5e5e5;
+      --accent: #315a86;
+      --background: #ffffff;
+      --soft: #f7f8fa;
+      --max-width: 980px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--background);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255,255,255,0.96);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-inner {
+      max-width: var(--max-width);
+      margin: auto;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      color: var(--text);
+      font-weight: 650;
+      letter-spacing: -0.02em;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      font-size: 0.94rem;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+    }
+
+    main {
+      max-width: var(--max-width);
+      margin: auto;
+      padding: 0 24px 70px;
+    }
+
+    header {
+      padding: 90px 0 70px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-weight: 650;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 800px;
+      font-size: clamp(2.6rem, 7vw, 5.3rem);
+      line-height: 0.98;
+      letter-spacing: -0.055em;
+      font-weight: 700;
+    }
+
+    .subtitle {
+      max-width: 720px;
+      margin: 28px 0 0;
+      color: var(--muted);
+      font-size: 1.22rem;
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .button {
+      display: inline-block;
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      padding: 9px 14px;
+      color: var(--text);
+      font-size: 0.92rem;
+      background: #fff;
+    }
+
+    .button:hover {
+      border-color: #bbb;
+      text-decoration: none;
+    }
+
+    section {
+      padding: 65px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    h2 {
+      margin: 0 0 28px;
+      font-size: 1.75rem;
+      letter-spacing: -0.03em;
+    }
+
+    h3 {
+      margin: 0 0 7px;
+      font-size: 1.1rem;
+    }
+
+    p {
+      margin: 0 0 16px;
+    }
+
+    .intro {
+      max-width: 780px;
+      font-size: 1.08rem;
+    }
+
+    .research-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .card {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 9px;
+      background: var(--soft);
+    }
+
+    .card p {
+      color: var(--muted);
+      margin: 0;
+      font-size: 0.96rem;
+    }
+
+    .item {
+      display: grid;
+      grid-template-columns: 130px 1fr;
+      gap: 20px;
+      padding: 22px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .item:first-of-type {
+      border-top: none;
+      padding-top: 0;
+    }
+
+    .item-date {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .item-content p {
+      color: var(--muted);
+      margin: 5px 0 0;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .tag {
+      padding: 5px 9px;
+      border-radius: 5px;
+      background: var(--soft);
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.84rem;
+    }
+
+    footer {
+      max-width: var(--max-width);
+      margin: auto;
+      padding: 30px 24px 50px;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    @media (max-width: 700px) {
+      .nav-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        gap: 12px;
+      }
+
+      header {
+        padding-top: 60px;
+      }
+
+      .research-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .item {
+        grid-template-columns: 1fr;
+        gap: 5px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a class="brand" href="#">Baris Kaftancioglu</a>
+
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <header>
+      <div class="eyebrow">PhD Researcher · Computer Science</div>
+
+      <h1>Baris<br>Kaftancioglu</h1>
+
+      <p class="subtitle">
+        PhD researcher at LIP6, Sorbonne University, working on
+        combinatorial optimization, ordinal assignment problems,
+        multiobjective optimization and local search.
+      </p>
+
+      <div class="links">
+        <!-- Replace # with your real links -->
+        <a class="button" href="#contact">Email</a>
+        <a class="button" href="#" target="_blank" rel="noopener">GitHub</a>
+        <a class="button" href="#" target="_blank" rel="noopener">Google Scholar</a>
+        <a class="button" href="#" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="button" href="#">CV ↓</a>
+      </div>
+    </header>
+
+
+    <section id="about">
+      <h2>About</h2>
+
+      <div class="intro">
+        <p>
+          I am a PhD researcher in Computer Science at
+          <strong>LIP6, Sorbonne University</strong>. My research focuses on
+          combinatorial optimization and decision-making problems involving
+          ordinal preferences.
+        </p>
+
+        <p>
+          I am particularly interested in exact algorithms to solve these problems.
+        </p>
+      </div>
+    </section>
+
+
+    <section id="research">
+      <h2>Research</h2>
+
+      <div class="research-grid">
+
+        <div class="card">
+          <h3>Knapsack Problem</h3>
+          <p>
+            The binary ordinal knapsack problem involves items whose values are 
+            assessed on a qualitative scale rather than a numerical scale.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>BUCO Problem</h3>
+          <p>
+            The biobjective unconstrained combinatorial optimization
+            problem (BUCO) can be viewed as a variant of the knapsack problem
+            where the capacity constraint is converted into an objective function.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Ordinal Assignment</h3>
+          <p>
+            Assignment problems in which agents express preferences over
+            tasks through ordinal rankings rather than cardinal utilities.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="tags">
+        <span class="tag">Operations Research</span>
+        <span class="tag">Combinatorial Optimization</span>
+        <span class="tag">Ordinal Optimization</span>
+        <span class="tag">Assignment Problems</span>
+        <span class="tag">Multiobjective Optimization</span>
+      </div>
+    </section>
+
+
+    <section id="publications">
+      <h2>Publications & Talks</h2>
+
+      <!-- Add your papers here -->
+
+      <div class="item">
+        <div class="item-date">February 2026</div>
+        <div class="item-content">
+          <h3>Implicit enumeration algorithm for ordinal Knapsack problem</h3>
+          <p>
+            Roadef Tours, 2026
+          </p>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-date">May 2026</div>
+        <div class="item-content">
+          <h3>BUCO Problem</h3>
+          <p>
+            MCDM Wuppertal, 2026
+          </p>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-date">November 2026</div>
+        <div class="item-content">
+          <h3>Efficient solution algorithms for the ordinal biobjective unconstrained combinatorial optimization problem</h3>
+          <p>
+            Algprithm Decision Theory (ADT'26), Université Dauphine
+          </p>
+        </div>
+      </div>
+
+    </section>
+
+
+    <section id="projects">
+      <h2>Research Projects</h2>
+
+      <div class="item">
+        <div class="item-date">PhD</div>
+        <div class="item-content">
+          <h3>Special Ordinal Assignment Problem</h3>
+          <p>
+            Study of non-dominated assignments under strict ordinal
+            preferences
+          </p>
+        </div>
+    </section>
+
+
+    <section id="contact">
+      <h2>Contact</h2>
+
+      <div class="intro">
+        <p>
+          <strong>LIP6 — Sorbonne University</strong><br>
+          Paris, France
+        </p>
+
+        <p>
+          Email:
+          <a href="mailto:Baris.Kaftancioglu@lip6.fr">
+            Baris.Kaftancioglu@lip6.fr
+          </a>
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    © 2026 Baris Kaftancioglu · Built for GitHub Pages
+  </footer>
+
+</body>
+</html>
